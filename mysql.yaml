@@ -3,6 +3,11 @@
   become: yes
 
   tasks:
+    - name: install mysql libraries
+      ansible.builtin.pip:
+        name:  PyMySQL
+        executable: pip3.9
+        
     - name: install mysql server
       ansible.builtin.dnf:
         name: mysql-server
@@ -24,5 +29,5 @@
     - name: print the output
       ansible.builtin.debug:
         msg: "MYSQL info : {{ mysql_info }}"
-        
+
               
