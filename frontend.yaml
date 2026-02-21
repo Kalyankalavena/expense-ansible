@@ -32,7 +32,7 @@
   ansible.builtin.unarchive:  
     src: /tmp/frontend.zip
     dest: /usr/share/nginx/html
-    remote_src: 
+    remote_src: yes
     
 - name: copy expense configuration
   ansible.builtin.copy:
@@ -42,4 +42,4 @@
 - name: restart nginx service
   ansible.builtin.service:
     name: nginx
-    state: restarted
+    state: restarted-
